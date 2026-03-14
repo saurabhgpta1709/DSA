@@ -5,7 +5,7 @@ import java.util.Stack;
 public class LongestBalancedParentheses {
 
     public static void main(String[] args) {
-        String str="()()()()()()()(((((((";
+        String str="((()()())";
         System.out.println("Longest length is :"+getLongestBalancedParenthesesLength(str)); ;
     }
 
@@ -18,13 +18,17 @@ public class LongestBalancedParentheses {
             if(c=='('){
                 stack.add('(');
                 maxLength++;
-            } else if (c==')') {
+            } else if (c==')' && !stack.isEmpty()) {
                 char curr = stack.peek();
                 if(curr =='('){
                     stack.pop();
                     maxLength ++;
                     finalLength=maxLength;
-                }else{
+                    System.out.println("Starting Longest Length"+stack.size());
+                } else if (stack.isEmpty()) {
+                    stack.add(')');
+                    maxLength++;
+                } else{
                     return finalLength;
                 }
             }
