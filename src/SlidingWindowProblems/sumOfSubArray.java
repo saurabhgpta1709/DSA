@@ -1,6 +1,7 @@
 package SlidingWindowProblems;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*********** Problem Statement************
  * Find continuous subarray whose sum equals a specified value target
@@ -55,4 +56,33 @@ public class sumOfSubArray {
         list.add(-1);
         return list;
     }
+
+//    int k =2;
+//
+//    List<Integer> list = new ArrayList<>();
+//
+//    int start = 0; int end = k-1;
+//
+//        while(start < arr.length -1){
+//
+//        List<Integer> tempList = new ArrayList<>();
+//
+//        tempList.add(arr[start]);
+//
+//        tempList.add(arr[end]);
+//
+//        list.add(Collections.max(tempList));
+//
+//        start++;
+//
+//        end++;
+//
+//    }
+//
+//        for(int i : list){
+//
+//        System.out.println(i + " ");
+//
+//    }
+
 }
