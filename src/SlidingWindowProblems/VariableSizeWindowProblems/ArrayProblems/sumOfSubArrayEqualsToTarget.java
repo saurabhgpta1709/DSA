@@ -1,7 +1,9 @@
-package SlidingWindowProblems;
+package SlidingWindowProblems.VariableSizeWindowProblems.ArrayProblems;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /*********** Problem Statement************
  * Find continuous subarray whose sum equals a specified value target
@@ -12,11 +14,11 @@ import java.util.List;
  * Explanation: The sum of elements from 2nd to 4th position is 12.
  *
  ******************************************/
-public class sumOfSubArray {
+public class sumOfSubArrayEqualsToTarget {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 7, 5};
+        int[] arr = {1, 3, 2, 3, 7, 5};
         int target = 12;
-        ArrayList<Integer> list = subArraySum(arr, target);
+        List<Integer> list = subArraySum(arr, target);
         System.out.println(list);
     }
 
@@ -37,22 +39,46 @@ public class sumOfSubArray {
 //        return list;
 //    }
 
-    private static ArrayList<Integer> subArraySum(int[] arr, int target) {
-        ArrayList<Integer> list = new ArrayList<>();
-        int start = 0;
-        int commulativeSum = 0;
-        for (int end = 0; end < arr.length; end++) {
-            commulativeSum += arr[end];
-            while (start < end && commulativeSum > target ) {
-                commulativeSum -= arr[start];
-                start++;
+//    private static ArrayList<Integer> subArraySum(int[] arr, int target) {
+//        ArrayList<Integer> list = new ArrayList<>();
+//        int start = 0;
+//        int commulativeSum = 0;
+//        for (int end = 0; end < arr.length; end++) {
+//            commulativeSum += arr[end];
+//            while (start < end && commulativeSum > target ) {
+//                commulativeSum -= arr[start];
+//                start++;
+//            }
+//            if (commulativeSum == target) {
+//                list.add(start+1);
+//                list.add(end+1);
+//                return list;
+//            }
+//        }
+//        list.add(-1);
+//        return list;
+//    }
+
+    public static List<Integer> subArraySum(int[] nums, int target) {
+        List<Integer> list = new ArrayList<>();
+        Map<Integer, Integer> map = new HashMap<>();
+        int prefixSum = 0;
+
+        map.put(0, -1);
+
+        for (int i = 0; i < nums.length; i++) {
+
+            prefixSum += nums[i];
+
+            if (map.containsKey(prefixSum - target)) {
+                list.add(map.get(prefixSum - target) + 1);
+                 list.add(i+1);
+            return list;
             }
-            if (commulativeSum == target) {
-                list.add(start+1);
-                list.add(end+1);
-                return list;
-            }
+
+            map.put(prefixSum, i);
         }
+
         list.add(-1);
         return list;
     }

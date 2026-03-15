@@ -1,4 +1,4 @@
-package SlidingWindowProblems.FixedSizeWindowProblems;
+package SlidingWindowProblems.FixedSizeWindowProblems.ArrayProblems;
 
 import java.util.ArrayList;
 import java.util.List;
