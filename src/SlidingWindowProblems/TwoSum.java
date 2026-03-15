@@ -17,7 +17,7 @@ import java.util.Map;
 public class TwoSum {
     public static void main(String[] args) {
         int[] arr = {2, 7, 11, 15};
-        int target = 13;
+        int target = 1355;
         int[] output = twoSum(arr, target);
         if (output.length == 2) {
             System.out.println("Output: {" + output[0] + ", " + output[1] + "}");

@@ -1,9 +1,9 @@
-package SlidingWindowProblems.FixedSizeWindowProblems;
+package SlidingWindowProblems.FixedSizeWindowProblems.ArrayProblems;
 
 public class MaxSumSubArraySizeK {
     public static void main(String[] args) {
         int arr[] = {100, 200, 300, 400};
-        int k = 2;
+        int k = 3;
         int maxSum = maxSubArraySum(arr, k);
         System.out.println(maxSum);
     }
