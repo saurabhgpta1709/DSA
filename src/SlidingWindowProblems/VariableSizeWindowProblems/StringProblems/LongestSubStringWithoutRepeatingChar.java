@@ -8,15 +8,16 @@ public class LongestSubStringWithoutRepeatingChar {
 
         String s = "abcabcdebb";
 
-        System.out.println(lengthOfLongestSubstring(s));
+        System.out.println(LongestSubstring(s));
     }
 
-    public static int lengthOfLongestSubstring(String s) {
+    public static String LongestSubstring(String s) {
 
         Map<Character, Integer> map = new HashMap<>();
 
         int left = 0;
         int maxLength = 0;
+        int startIndex=0;
 
         for (int right = 0; right < s.length(); right++) {
 
@@ -27,10 +28,12 @@ public class LongestSubStringWithoutRepeatingChar {
             }
 
             map.put(current, right);
-
-            maxLength = Math.max(maxLength, right - left + 1);
+            if (right - left + 1 > maxLength ) {
+                maxLength = right - left + 1;
+                startIndex = left;
+            }
         }
 
-        return maxLength;
+        return s.substring(startIndex, startIndex + maxLength);
     }
 }
