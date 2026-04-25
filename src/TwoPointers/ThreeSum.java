@@ -1,4 +1,4 @@
-package SlidingWindowProblems;
+package TwoPointers;
 
 import java.util.ArrayList;
 import java.util.Arrays;

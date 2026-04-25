@@ -1,4 +1,4 @@
-package SlidingWindowProblems;
+package TwoPointers.TwoSum;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +14,7 @@ import java.util.Map;
  *
  ******************************************/
 
-public class TwoSum {
+public class TwoSumUnSortedUsingHasMap {
     public static void main(String[] args) {
         int[] arr = {2, 7, 11, 15};
         int target = 1355;
@@ -25,38 +25,6 @@ public class TwoSum {
             System.out.println("No pair found for target " + target);
         }
     }
-
-    /*Time Complexity = n2 */
-//    public static int[] twoSum(int[] arr, int target) {
-//        int [] output = new int[2];
-//        for(int k=0;k<arr.length;k++){
-//            for( int i=k+1;i<arr.length;i++){
-//                if((arr[k]+arr[i])==target){
-//                    output[0] = k;
-//                    output[1] = i;
-//                    return output;
-//                }
-//            }
-//        }
-//        return output;
-//    }
-
-    /*Time Complexity = n */
-//    public static int[] twoSum(int arr[], int target) {
-//        int [] output = new int[2];
-//        HashMap<Integer,Integer> map = new HashMap<>();
-//        for (int k = 0; k < arr.length; k++) {
-//            int cur = arr[k];
-//            int x = target - arr[k];
-//            if (map.containsKey(x)) {
-//                output[0]= map.get(x);
-//                output[1]= k;
-//                return output;
-//            }
-//            map.put(arr[k],k);
-//        }
-//        return output;
-//    }
 
     // Optimized Solution + Clean Code
     /*Time Complexity = n */
