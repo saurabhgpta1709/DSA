@@ -16,9 +16,14 @@ public class MoveAllZerosToEnd {
         int index = 0; // position for next non-zero
 
         // Step 1: Move all non-zero elements forward
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != 0) {
-                nums[index++] = nums[i];
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] != 0) {
+//                nums[index++] = nums[i];
+//            }
+//        }
+        for (int num : nums){
+            if (num!=0){
+                nums[index++]=num;
             }
         }
 

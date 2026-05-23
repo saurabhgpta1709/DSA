@@ -5,7 +5,7 @@ import java.util.*;
 public class TopKFrequentCharacters {
     public static void main(String[] args) {
 
-        List<Character> list =topKFreq("trreeemmmmaaaaapppppp",3);
+        List<Character> list =topKFreq("trreeeemmmmaaaaapppppp",3);
         System.out.println(list);
     }
 

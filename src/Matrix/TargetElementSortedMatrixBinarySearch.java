@@ -35,7 +35,7 @@ public class TargetElementSortedMatrixBinarySearch {
                 {13, 15, 17}
         };
 
-        int target = 9;
+        int target = 3;
         System.out.println(searchMatrix(matrix, target)); // true
     }
 }
