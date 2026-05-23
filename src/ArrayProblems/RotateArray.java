@@ -22,5 +22,9 @@ public class RotateArray {
             j++;
         }
         System.arraycopy( result, 0, nums, 0, nums.length );
+        for(int n:result){
+            System.out.print(n);
+        }
+
     }
 }
