@@ -3,44 +3,44 @@ package Stack;
 import java.util.Stack;
 
 /*
-Find number of days until warmer temperature.
-Example
+Find nearest smaller element on left.
 
+Example
 Input:
-[73,74,75,71,69,72,76,73]
+[1,6,4,10,2,5]
 Output:
-[1,1,4,2,1,1,0,0]
+[-1,1,1,4,1,2]
  */
-public class DailyTemperature {
+public class PreviousSmallerElement {
     public static void main(String[] args) {
         int [] arr = {1,6,4,10,2,5};
-        int [] result  = dailyTemperatures(arr);
+        int [] result  = previousSmaller(arr);
         for (int i: result){
             System.out.print(i+",");
         }
     }
 
-    public static int[] dailyTemperatures(int[] temp) {
+    public static int[] previousSmaller(int[] arr) {
 
-        int n = temp.length;
+        int n = arr.length;
 
         int[] ans = new int[n];
 
         Stack<Integer> stack = new Stack<>();
 
-        for(int i = n - 1; i >= 0; i--) {
+        for(int i = 0; i < n; i++) {
 
             while(!stack.isEmpty() &&
-                    temp[stack.peek()] <= temp[i]) {
+                    stack.peek() >= arr[i]) {
 
                 stack.pop();
             }
 
             ans[i] = stack.isEmpty()
-                    ? 0
-                    : stack.peek() - i;
+                    ? -1
+                    : stack.peek();
 
-            stack.push(i);
+            stack.push(arr[i]);
         }
 
         return ans;
