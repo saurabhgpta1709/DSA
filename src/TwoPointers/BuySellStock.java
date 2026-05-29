@@ -11,7 +11,7 @@ public class BuySellStock {
         int left = 0;   // buy day
         int right = 1;  // sell day
 
-        int maxProfit = 0;
+        int maxProfit = Integer.MIN_VALUE;
 
         while (right < prices.length) {
 

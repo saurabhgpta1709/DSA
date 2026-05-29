@@ -21,13 +21,13 @@ public class SqOfNumbersInSortedArray {
             int rightSquare = arr[right] * arr[right];
 
             if (leftSquare > rightSquare) {
-                result[index] = leftSquare;
+                result[index--] = leftSquare;
                 left++;
             } else {
-                result[index] = rightSquare;
+                result[index--] = rightSquare;
                 right--;
             }
-            index--;
+//            index--;
         }
 
         return result;
