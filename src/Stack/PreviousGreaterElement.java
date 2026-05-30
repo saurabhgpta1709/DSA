@@ -14,10 +14,10 @@ import java.util.Stack;
 
 public class PreviousGreaterElement {
     public static void main(String[] args) {
-        int [] arr = {10,4,2,20,40,12};
-        int [] result  = previousGreater(arr);
-        for (int i: result){
-            System.out.print(i+",");
+        int[] arr = {10, 4, 2, 20, 40, 12};
+        int[] result = previousGreater(arr);
+        for (int i : result) {
+            System.out.print(i + ",");
         }
     }
 
@@ -29,17 +29,15 @@ public class PreviousGreaterElement {
 
         Stack<Integer> stack = new Stack<>();
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
 
-            while(!stack.isEmpty() &&
+            while (!stack.isEmpty() &&
                     stack.peek() <= arr[i]) {
 
                 stack.pop();
             }
 
-            ans[i] = stack.isEmpty()
-                    ? -1
-                    : stack.peek();
+            ans[i] = stack.isEmpty() ? -1 : stack.peek();
 
             stack.push(arr[i]);
         }
