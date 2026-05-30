@@ -35,9 +35,7 @@ public class NextSmallerElement {
                 stack.pop();
             }
 
-            ans[i] = stack.isEmpty()
-                    ? -1
-                    : stack.peek();
+            ans[i] = stack.isEmpty() ? -1 : stack.peek();
 
             stack.push(arr[i]);
         }
